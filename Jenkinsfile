@@ -1,10 +1,12 @@
 pipeline {
     agent any
     parameters {
-		choice(name: "JAVA_VENDOR", choices: ["Coretto"]),
-		choice(name: "JAVA_VERSION", choices: ["11"]),
-		choice(name: "OS", choices: ["Linux"]),
-		choice(name: "BROWSER", choices: ["Chrome"])
+		separator(name: "building")
+		choice(name: "java_vendor", choices: "Corretto")
+		choice(name: "java_version", choices: "11")
+		separator(name: "testing")
+		choice(name: "browser", choices: "chrome")
+		separator(name: "end")
 	}
     stages {
         stage('Example') {
