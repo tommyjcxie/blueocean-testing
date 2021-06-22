@@ -4,9 +4,9 @@ pipeline {
 		separator(name: "building", sectionHeader: "Build Environment")
 		choice(name: "java_vendor", choices: "Corretto")
 		choice(name: "java_version", choices: "11")
-		separator(name: "testing")
+		separator(name: "testing", sectionHeader: "Test Environment")
 		choice(name: "browser", choices: "chrome")
-		separator(name: "end")
+		
 	}
     stages {
         stage('Example') {
