@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-		separator(name: "building")
+		separator(name: "building", sectionHeader: "Build Environment")
 		choice(name: "java_vendor", choices: "Corretto")
 		choice(name: "java_version", choices: "11")
 		separator(name: "testing")
